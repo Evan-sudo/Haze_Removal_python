@@ -83,25 +83,34 @@ class HazeRemoval(object):
 
     def show(self):
         import cv2
-        cv2.imwrite("img/src.jpg", (self.src*255).astype(np.uint8)[:,:,(2,1,0)])
-        cv2.imwrite("img/dark.jpg", (self.dark*255).astype(np.uint8))
-        cv2.imwrite("img/tran.jpg", (self.tran*255).astype(np.uint8))
-        cv2.imwrite("img/gtran.jpg", (self.gtran*255).astype(np.uint8))
-        cv2.imwrite("img/dst.jpg", self.dst[:,:,(2,1,0)])
+        cv2.imwrite("img/src%d.jpg"%i, (self.src*255).astype(np.uint8)[:,:,(2,1,0)])
+        cv2.imwrite("img/dark%d.jpg"%i, (self.dark*255).astype(np.uint8))
+        cv2.imwrite("img/tran%d.jpg"%i, (self.tran*255).astype(np.uint8))
+        cv2.imwrite("img/gtran%d.jpg"%i, (self.gtran*255).astype(np.uint8))
+        cv2.imwrite("img/dst%d.jpg"%i, self.dst[:,:,(2,1,0)])
         
-        io.imsave("test.jpg", self.dst)
+        
+        io.imsave("results/test%d.jpg"%i, self.dst)
 
 
 
 if __name__ == '__main__':
-    import sys
+    image = './IEI2019/'
+    dirs = os.listdir(image)
+    #import sys
     hr = HazeRemoval()
-    hr.open_image(sys.argv[1])
-    hr.get_dark_channel()
-    hr.get_air_light()
-    hr.get_transmission()
-    hr.guided_filter()
-    hr.recover()
-    hr.show()
+    file_count = 0
+    for im in dirs:
+        path = image + im
+        print('Processing the %dth image...' % file_count)
+        #hr.open_image(sys.argv[1])
+        hr.open_image(path)
+        hr.get_dark_channel()
+        hr.get_air_light()
+        hr.get_transmission()
+        hr.guided_filter()
+        hr.recover()
+        hr.show(file_count)
+        file_count+=1
 
     
