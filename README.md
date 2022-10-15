@@ -43,6 +43,6 @@ You should modify the 'image' in haze_removal.py according to your own testset
 According to two of the dehazing images, there are still some artifacts and distortions. And when the intensity of the haze image is close to the atmosphere light, the algorithm didn't work well.
 
 ## References
-
+   
 - paper: Single Image Haze Removal using Dark Channel Prior
 - paper: Guided Image Fltering
