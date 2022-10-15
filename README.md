@@ -36,7 +36,7 @@ You should modify the 'image' in haze_removal.py according to your own testset
 </figure>
 
 <figure class="half">
-    <img src="IEI2019/H22">
+    <img src="IEI2019/H22.jpg">
     <img src="results/test17.jpg">
 </figure>
 
