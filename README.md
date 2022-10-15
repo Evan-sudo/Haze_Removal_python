@@ -36,10 +36,11 @@ You should modify the 'image' in haze_removal.py according to your own testset
 </figure>
 
 <figure class="half">
-    <img src="demo/canyon2.bmp">
-    <img src="demo/canyon2_rev.jpg">
+    <img src="IEI2019/H22">
+    <img src="results/test17.jpg">
 </figure>
 
+According to two of the dehazing images, there are still some artifacts and distortions. And when the intensity of the haze image is close to the atmosphere light, the algorithm didn't work well.
 
 ## References
 
