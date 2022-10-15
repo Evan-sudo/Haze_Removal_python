@@ -15,18 +15,18 @@ This is an simple implemention of "single image haze removal using dark channel 
 
 - numpy
 - opencv-python
-- skimage
+- scikit-image
 - Pillow
 - matplotlib
 - numba
 
 ## Run
 
-```bash
-cd python_code
-python haze_removal.py [your image path]
+```bash or zsh
+cd Haze_Removal_python
+python haze_removal.py 
 ```
-
+You should modify the 'image' in haze_removal.py according to your own testset
 
 ## DEMO
 
